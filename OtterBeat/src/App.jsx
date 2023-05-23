@@ -12,6 +12,7 @@ function App() {
           {/* <Route exact path="/" component={Home} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/songs" element={<ListOfSongs />} />
+          <Route path="/songs/favorite" element={<listOfFavorite/>}/>
           {/* <Route path="/contact" component={Contact} /> */}
         </Routes>
       </Router>
