@@ -1,7 +1,11 @@
 import React from "react";
+import Favorites from "./favorites";
 
 function listOfFavorites(artists){
-
+    function isFavorite(songId){
+        if(Favorites.favorites.include(songId))
+            return songId
+    }
 
     return(
         <div>
@@ -9,7 +13,7 @@ function listOfFavorites(artists){
                 <div key={index}>
                         
             <Artist artist={artist.artist} />
-            <Songs songs={artist.songs} />
+            <Songs songs={isFavorite(artist.songs.id)} />
             </div>
             })}; 
 
