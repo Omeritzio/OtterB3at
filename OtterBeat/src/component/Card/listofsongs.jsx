@@ -4,24 +4,9 @@ import Songs from "./songs";
 
 // import Song from "./song";
 
-function ListOfSongs() {
-  const [artists, setArtists] = useState([]);
-  const fetchData = async () => {
-    try {
-      const response = await fetch("/Songs.json");
-      if (!response.ok) {
-        throw new Error("Failed to fetch JSON data");
-      }
-      const data = await response.json();
-      setArtists(data);
-    } catch (error) {
-      console.error("Error fetching JSON:", error);
-    }
-  };
+function ListOfSongs(props) {
+  const {artists} = props
 
-  useState(() => {
-    fetchData();
-  }, []);
   return (
     <div>
       {artists.map((artist, index) => {

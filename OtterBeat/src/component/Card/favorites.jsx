@@ -1,22 +1,28 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-function Favorites({ songId }) {
-  const [favorites, setFavorites] = useState([]);
+function Favorites({ songs }) {
+  
+  const [favoriteSongs, setFavoriteSongs] = useState([]);
 
   const toggleFavorite = (songId) => {
-    if (favorites.includes(songId)) {
+    const song = songs.find((song) => song.id === songId);
+    if (!song) return;
+
+    if (favoriteSongs.some((favSong) => favSong.id === songId)) {
       // If the song is already in favorites, remove it
-      setFavorites(favorites.filter((id) => id !== songId));
+      setFavoriteSongs(favoriteSongs.filter((favSong) => favSong.id !== songId));
     } else {
       // If the song is not in favorites, add it
-      setFavorites([...favorites, songId]);
+      setFavoriteSongs([...favoriteSongs, song]);
     }
   };
 
   return (
     <div>
-      <button onClick={() => toggleFavorite(songId)}>
-        {favorites.includes(songId) ? (
+
+        <div key={songs.id}>
+          <button onClick={() => toggleFavorite(song.id)}>
+            {favoriteSongs.some((favSong) => favSong.id === song.id) ?(
           <span role="img" aria-label="Red Heart">
             ❤️
           </span>
@@ -25,7 +31,9 @@ function Favorites({ songId }) {
             🤍
           </span>
         )}
-      </button>
+          </button>
+        </div>
+      
     </div>
   );
 }

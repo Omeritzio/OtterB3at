@@ -2,7 +2,6 @@ import React from "react";
 import Favorites from "./favorites";
 
 function Songs(songs) {
-  console.log(songs);
   return (
     <div>
       <ul>
@@ -14,7 +13,7 @@ function Songs(songs) {
             <h3>{song.title}</h3>
             <p> Duration: {song.duration}</p>
             <p>Release Year: {song.releaseYear}</p>
-            <Favorites songId={song.songid} />
+            <Favorites songs={song} />
           </li>
         ))}
       </ul>

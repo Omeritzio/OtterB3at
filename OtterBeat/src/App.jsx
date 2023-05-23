@@ -1,8 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./component/Home/home";
-import ListOfSongs from "./component/Card/listofsongs";
+
 import "tachyons";
+import FavoriteSongsPage from "./pages/favorites";
+import SongsPage from "./pages/songs";
 
 function App() {
   return (
@@ -11,8 +13,9 @@ function App() {
         <Routes>
           {/* <Route exact path="/" component={Home} /> */}
           <Route path="/" element={<Home />} />
-          <Route path="/songs" element={<ListOfSongs />} />
-          <Route path="/songs/favorite" element={<listOfFavorite/>}/>
+          <Route path="/songs" element={<SongsPage />} />
+          <Route path="/favorites" element={<FavoriteSongsPage />}/>
+
           {/* <Route path="/contact" component={Contact} /> */}
         </Routes>
       </Router>
