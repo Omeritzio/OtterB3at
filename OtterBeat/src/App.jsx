@@ -5,10 +5,12 @@ import Home from "./component/Home/home";
 import "tachyons";
 import FavoriteSongsPage from "./pages/favorites";
 import SongsPage from "./pages/songs";
+import Navbar from "./component/navbar/navbar";
 
 function App() {
   return (
     <div>
+      <Navbar/>
       <Router>
         <Routes>
           {/* <Route exact path="/" component={Home} /> */}
