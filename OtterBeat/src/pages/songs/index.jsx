@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function songsPage() {
-  return (
-    <div>songsPage</div>
-  )
+  return(
+  <div>songsPage</div>
+  ) ;
 }
 
-export default songsPage
+export default songsPage;
