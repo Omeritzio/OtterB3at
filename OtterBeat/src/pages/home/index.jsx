@@ -1,9 +1,21 @@
 import React from 'react'
+import Home from '../../component/Home/home';
 
-function homePage() {
+function HomePage() {
+
   return (
-    <div>homePage</div>
+    <div>
+      
+      <img
+      className="h-full w-full"
+      src=".\src\assets\OtterBeat.png"
+      alt="OtterBeat"
+      
+    />
+    <Home/>
+    </div>
+    
   )
 }
 
-export default homePage;
+export default HomePage;

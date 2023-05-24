@@ -1,11 +1,13 @@
-import React from "react";
-import Favorites from "./favorites";
+import React, { useState } from 'react';
+import Favorites from './Favorites';
 
-function Songs(songs) {
+function Songs({ songs }) {
+  const [favoriteSongs, setFavoriteSongs] = useState([]);
+
   return (
     <div>
       <ul>
-        {songs?.songs.map((song, songIndex) => (
+        {songs.map((song, songIndex) => (
           <li
             key={songIndex}
             className="bg-light-green dib br3 pa3 grow bw2 shadow-5"
@@ -13,7 +15,11 @@ function Songs(songs) {
             <h3>{song.title}</h3>
             <p> Duration: {song.duration}</p>
             <p>Release Year: {song.releaseYear}</p>
-            <Favorites songs={song} />
+            <Favorites
+              song={song}
+              favoriteSongs={favoriteSongs}
+              setFavoriteSongs={setFavoriteSongs}
+              />
           </li>
         ))}
       </ul>
