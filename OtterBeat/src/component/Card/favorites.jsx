@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Button } from "@material-tailwind/react";
+
 
 function Favorites({ song, favoriteSongs, setFavoriteSongs }) {
   const toggleFavorite = (songId) => {
@@ -24,7 +24,7 @@ function Favorites({ song, favoriteSongs, setFavoriteSongs }) {
   }, [favoriteSongs]);
 
   return (
-    <Button onClick={() => toggleFavorite(song.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+    <button type="button" class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 " onClick={() => toggleFavorite(song.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
       {favoriteSongs.some((favSong) => favSong.id === song.id) ? (
         <span role="img" aria-label="Red Heart">
           ❤️
@@ -34,7 +34,7 @@ function Favorites({ song, favoriteSongs, setFavoriteSongs }) {
           🤍
         </span>
       )}
-    </Button>
+    </button>
   );
 }
 

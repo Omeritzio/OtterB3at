@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import "./index.css";
 import "tachyons";
+
 import FavoriteSongsPage from "./pages/favorites";
 import SongsPage from "./pages/songs";
 import Header from "./component/navbar/header";
@@ -9,7 +11,7 @@ import HomePage from "./pages/home";
 
 function App() {
   return (
-    <div>
+    <div >
       <Header />
       <Router>
         <Routes>
