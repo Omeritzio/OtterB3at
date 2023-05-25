@@ -24,7 +24,7 @@ function Favorites({ song, favoriteSongs, setFavoriteSongs }) {
   }, [favoriteSongs]);
 
   return (
-    <button type="button" class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 " onClick={() => toggleFavorite(song.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+    <button className="bg-cyan-500 hover:bg-cyan-600 " onClick={() => toggleFavorite(song.id)} >
       {favoriteSongs.some((favSong) => favSong.id === song.id) ? (
         <span role="img" aria-label="Red Heart">
           ❤️
